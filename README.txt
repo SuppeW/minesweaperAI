@@ -75,7 +75,7 @@ How to make the board:
     on and on, until it finds one.
 
     The game grid has now had its first test run, and worked as I expected. Next step on
-    the agende will be to implement then number and and empty cells. As mentioned
+    the agenda will be to implement then numbers and empty cells list. As mentioned
     previously, this will be a sperate 2D list, fetching the bomb cells from the
     randBomb function.
 
@@ -86,3 +86,17 @@ How to make the board:
     E, and the number of adjestent neighboring bomb I will just represent their cell with
     a number. This bumps into a problem where I have put the active bomb cells into
     the value of 1, and will have to change that to something like B, for bomb.
+
+    My current method of checking neighbors for a bomb seems to be working, but I
+    have to tweak the settings to be able to get it right, It looks like it clearly sees
+    where the bombs are located, but cant really count it to well. I dont know what is
+    causing the problem at the moment, but hopefully it has something to do with how
+    I set up counting of the neighboring cells, and maybe it is missing a negative number
+    something like that. If this does not work, I will work towards a new method,
+    however I don't think the current method, containing 13 if statements is the best way
+    to go about this. Although, I don't want to check in on other projects because of the
+    learning experience, I think I might do so very soon. Reading trough those 13 if
+    statements, are not only making me disgusted, because I hate spaghetti, but it is also
+    driving me crazy!!
+
+    
