@@ -1,0 +1,36 @@
+
+
+00,01,02,03,04,05,06,07,08,09
+10,11,12,13,14,15,16,17,18,19
+20,21,22,23,24,25,26,27,28,29
+30,31,32,33,34,35,36,37,38,39
+40,41,42,43,44,45,46,47,48,49
+50,51,52,53,54,55,56,57,58,59
+60,61,62,63,64,65,66,67,68,69
+70,71,72,73,74,75,76,77,78,79
+80,81,82,83,84,85,86,87,88,89
+90,91,92,93,94,95,96,97,98,99
+
+
+
+Every cell that is not in the center have  8 neighboring cells.
+Which means every cell can have from 0 to 8 bombs as neighbors.
+Looking around the edges, every cell except the corners have 5 neighboring
+cells, meaning they every cell can have from 0 to 5 bombs as neighbors.
+The corners however has 3 neighboring cells, meaning it can 0 to 3 bombs as neighbors.
+
+
+to solve this I will import the bombCell list, and loop trough every cell in the Grid
+to see if the cell have a bomb as a neigbor, if it does, the every loop will have an
+individual counter, and display the final number after the looping is finished.
+I have yes to decide whether this number will be displayed in a new list containing
+all bomb cells as well, or if I should keep it in a seperate list, I guess time will
+show, what the best method will be. the individual neighbor-checking function will look
+something like:
+
+
+
+
+if grid[x-1][y-1] == 1:
+  counter++
+elif grid[x-1][y] == 1:

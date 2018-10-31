@@ -99,4 +99,26 @@ How to make the board:
     statements, are not only making me disgusted, because I hate spaghetti, but it is also
     driving me crazy!!
 
-    
+    Ok, so I am finally done making the full playboard, and everything runs just fine.
+    Instead of make two different boards, I am now just converting the bombs list,
+    to contain both the numbers and bombs for. All the wall and corner rules work flawlessly,
+    and the game is also scalable, whit options of grid size and bomb amount at the Start
+    of the program.
+
+    The GUI. I will be using pygame to make the playing grid. And with that said,
+    Time to get to work! At the moment I am just working my way in, by testeing out
+    different functions in pygame. I have made some simple keypress programs, and
+    drawn some shapes, my next thing to do, will be to make a grid of rectangles.
+    with each rectangle having an id, so I can call i trough my minesweaper function.
+
+    I have now made a working pygame grid, with grey cells, and when the cell i clicked
+    It will turn red. I reall had to squeak every part of the code to make it work,
+    but in the end, I turned out perfect. Every cell is 19px wide and tall, and every
+    cell have a margin of 1. There is still some bugs, when resizing the board, and
+    changing the dimensions of the cells. The grey cells line up perfect, but the
+    red cells, are misplaced when activated. So I have to figure out this later.
+    For now, what remains, is to return a value iterating 1s, so that I can chnage
+    the item in the selected game grid. But this should be piece of cake, compared
+    to what I have just been trough. Maths is hard...
+    Aaaaand, I am done with the cellid, in code called cellnr, to not get confused
+    if I ever was to use the built in python-function "id".
