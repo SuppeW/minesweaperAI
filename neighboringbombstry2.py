@@ -1,5 +1,7 @@
 import time as time
+import random, pygame
 
+pygame.init()
 
 bombs =[
 [0,9,0,0,9],
@@ -75,3 +77,23 @@ for c in range(0,totcol):
                         bombs[c][r] += 1
 
 print(bombs)
+
+curnum = str(bombs[0][0])
+font = pygame.font.SysFont('comicsansms', 72)
+text = font.render(curnum,True,(0,128,0))
+
+win = pygame.display.set_mode((400, 400))
+
+run = True
+while run:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+
+    win.fill((255,255,255))
+    win.blit(text,(0,0))
+
+    pygame.display.update()
+
+
+pygame.quit()

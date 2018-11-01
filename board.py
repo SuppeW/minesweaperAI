@@ -1,5 +1,23 @@
 import random as rand
+import pygame
 
+pygame.init()
+pygame.font.init()
+
+winwidth, winheight = 400, 400
+win = pygame.display.set_mode((winwidth, winheight))
+pygame.display.set_caption("Grid Example")
+win.fill((255,255,255))
+
+x, y = 1, 1
+celldim = 20
+margin = 1
+rectWidth, rectHeight = celldim-margin, celldim-margin
+color = (200,200,200)
+red = (255,0,0)
+ratio = int(winwidth/rectHeight)
+cellnr = 0, 0
+keys = pygame.key.get_pressed()
 
 rows, cols = input("Enter X and Y size of board: ").split(' ')
 boardsize = int(rows)*int(cols)
@@ -96,8 +114,36 @@ def playboard(y,x):
 
 playboard(cols, rows)
 
+for c in range(0,ratio):
+    x=1
+    for r in range(0,ratio):
+        pygame.draw.rect(win, color, (x, y, rectWidth, rectHeight))
+        x = (x+rectWidth+margin)
+    y = (y+rectHeight+margin)
 
-print("1. Resize the terminal windowcmd so that the square breackets line up.")
-print("2. You will now see the first randomized bombgrid. The number 9 represent a bomb")
-print("3. And also the playgrid, including a number for neighboring bombs.")
-input("4. Press Enter to exit!")
+pygame.display.update()
+
+
+
+run = True
+while run:
+    pygame.time.delay(50)
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            run = False
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            mousepos = pygame.mouse.get_pos()
+            print(mousepos)
+            x, y = mousepos
+            x, y = x-(x%(winheight/celldim))+1, y-(y%(winwidth/celldim))+1
+            print(x,y)
+            pygame.draw.rect(win, red, (x, y, rectWidth, rectHeight))
+            cellnr = int(x/celldim), int(y/celldim)
+            print(cellnr)
+            pygame.display.update()
+
+
+
+
+pygame.quit()
