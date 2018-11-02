@@ -93,7 +93,6 @@ while run:
     win.fill((255,255,255))
     win.blit(text,(0,0))
 
-    pygame.display.update()
 
 
 pygame.quit()
